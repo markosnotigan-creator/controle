@@ -4,6 +4,7 @@ import react from '@vitejs/plugin-react';
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, (process as any).cwd(), '');
   return {
+    base: './', // Corrige caminhos de assets para deploy em subdiretórios (GitHub Pages)
     plugins: [react()],
     define: {
       // Injeta apenas a API KEY de forma segura
